@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+const path = require('path')
+const request = require('request')
+const router = require('./router')
+app.use(express.static(path.join(__dirname,'public')))
+app.use('/api',router)
+app.listen(8000, () => {
+    console.log("starting the server")
+})
